@@ -9,5 +9,10 @@ function parseHTML () {
     team: "Lakers"
   }
   // your code here
-  
+  let parsed = document.querySelector("#parse-me");
+  let text = parsed.textContent;
+  for (let key in obj) {
+    text = text.replace("{" + key + "}", obj[key]);
+  }
+  parsed.textContent = text;
 }
