@@ -21,6 +21,15 @@ let pokemonToAdd = [
 
 function addPokemon (data) {
   // Use the data that you take in and itterate through it and add each pokemon to the table.
-  // your code here
-
+  let tbody = document.querySelector("tbody");
+  for(let obj of data) {
+    let row = document.createElement("tr");
+    for (let key in obj) {
+      let td = document.createElement("td");
+      let text = document.createTextNode(obj[key]);
+      td.appendChild(text);
+      row.appendChild(td);
+    }
+    tbody.appendChild(row);
+  }
 }
